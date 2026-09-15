@@ -25,10 +25,17 @@ export default function Footer() {
                   className="h-11 w-11 md:h-12 md:w-12 object-contain"
                 />
               </span>
-              <span className="text-lg font-bold">
-                <span className="text-white">MoveAbility</span>{" "}
-                <span className="text-primary">Health</span>
-                <span className="block text-[10px] font-semibold tracking-widest text-white/60">
+              <span className="flex flex-col justify-center">
+                <span className="flex flex-col items-center">
+                  <span className="text-xl md:text-2xl font-bold leading-none whitespace-nowrap">
+                    <span className="text-white">Move</span>
+                    <span className="text-primary">Ability</span>
+                  </span>
+                  <span className="mt-1 text-[10px] sm:text-xs font-semibold leading-none tracking-wide text-white/80 whitespace-nowrap">
+                    — HEALTH —
+                  </span>
+                </span>
+                <span className="mt-1 text-[10px] leading-tight font-semibold tracking-widest text-white/60">
                   MOVE • RECOVER • LIVE BETTER
                 </span>
               </span>

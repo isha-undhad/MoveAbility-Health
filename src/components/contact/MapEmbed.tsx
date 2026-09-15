@@ -1,5 +1,3 @@
-import ContactInfoCard from "./ContactInfoCard";
-
 export interface MapEmbedProps {
   mapSrc: string;
   mapTitle: string;
@@ -20,7 +18,7 @@ export default function MapEmbed({
   parkingNote,
 }: MapEmbedProps) {
   return (
-    <div className="space-y-6">
+    <div className="h-full flex flex-col space-y-6">
       <div className="space-y-3">
         <p className="text-sm font-bold tracking-widest text-primary uppercase">05 / Tarneit Clinic</p>
         <h2 className="text-3xl sm:text-4xl font-bold text-secondary">Visit Us</h2>
@@ -30,7 +28,7 @@ export default function MapEmbed({
         </p>
       </div>
 
-      <div className="relative rounded-xl overflow-hidden shadow-md border border-gray-100 aspect-video bg-gray-100">
+      <div className="relative flex-1 min-h-[280px] rounded-xl overflow-hidden shadow-md border border-gray-100 bg-gray-100">
         <iframe
           title={mapTitle}
           className="w-full h-full border-0"
@@ -54,37 +52,6 @@ export default function MapEmbed({
             <span className="text-xs text-gray-500">{parkingNote}</span>
           </div>
         </div>
-      </div>
-
-      <div className="grid sm:grid-cols-2 gap-4">
-        <ContactInfoCard title="Direct Contact">
-          <p>
-            Phone:{" "}
-            <a href="tel:0476582414" className="text-primary font-medium hover:underline">
-              0476 582 414
-            </a>
-          </p>
-          <p>
-            Email:{" "}
-            <a href="mailto:info@moveabilityhealth.com.au" className="text-primary font-medium hover:underline">
-              info@moveabilityhealth.com.au
-            </a>
-          </p>
-        </ContactInfoCard>
-        <ContactInfoCard title="Tarneit Clinic Hours">
-          <p className="flex justify-between gap-4">
-            <span>Mon &ndash; Fri</span>
-            <span>8:00am &ndash; 6:00pm</span>
-          </p>
-          <p className="flex justify-between gap-4">
-            <span>Saturday</span>
-            <span>9:00am &ndash; 1:00pm</span>
-          </p>
-          <p className="flex justify-between gap-4">
-            <span>Sunday</span>
-            <span>Closed</span>
-          </p>
-        </ContactInfoCard>
       </div>
     </div>
   );

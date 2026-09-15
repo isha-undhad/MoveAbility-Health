@@ -62,6 +62,7 @@ export default function ContactForm({ heading }: ContactFormProps) {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -75,9 +76,13 @@ export default function ContactForm({ heading }: ContactFormProps) {
   };
 
   const dismissSuccess = () => setIsSuccess(false);
+  const dismissError = () => setSubmitError(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Guard against double submission (e.g. rapid Enter presses) beyond the button's own disabled state.
+    if (isSubmitting) return;
 
     const nextErrors: FormErrors = {
       name: validateField("name", values.name),
@@ -91,10 +96,26 @@ export default function ContactForm({ heading }: ContactFormProps) {
     if (hasErrors) return;
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    // Simulated async submission — no backend wired up.
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: values.name.trim(),
+          email: values.email.trim(),
+          phone: values.phone.trim(),
+          message: values.message.trim(),
+        }),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (!response.ok || !data?.success) {
+        throw new Error();
+      }
+
       setIsSuccess(true);
       setValues(INITIAL_VALUES);
       setErrors({});
@@ -102,7 +123,11 @@ export default function ContactForm({ heading }: ContactFormProps) {
       setTimeout(() => {
         setIsSuccess(false);
       }, 5000);
-    }, 800);
+    } catch {
+      setSubmitError("Something went wrong while sending your message. Please try again shortly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -134,6 +159,35 @@ export default function ContactForm({ heading }: ContactFormProps) {
             onClick={dismissSuccess}
             aria-label="Dismiss success message"
             className="text-green-600 hover:text-green-800 transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
+              <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+            </svg>
+          </button>
+        </div>
+      )}
+
+      {submitError && (
+        <div className="flex items-start gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3.5 text-red-800">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+            className="h-5 w-5 flex-shrink-0 mt-0.5 text-red-600"
+          >
+            <path
+              fillRule="evenodd"
+              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <p className="text-sm flex-1">{submitError}</p>
+          <button
+            type="button"
+            onClick={dismissError}
+            aria-label="Dismiss error message"
+            className="text-red-600 hover:text-red-800 transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
               <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
