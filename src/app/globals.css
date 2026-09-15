@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+@theme {
+  --color-primary: #0ea5b7;
+  --color-primary-teal: #0ea5b7;
+  --color-secondary: #0b2a4a;
+  --color-secondary-navy: #0b2a4a;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
