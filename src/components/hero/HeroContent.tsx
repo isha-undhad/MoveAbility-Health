@@ -26,17 +26,17 @@ const features: Feature[] = [
 
 export default function HeroContent() {
   return (
-    <div className="space-y-6">
-      <span className="inline-flex items-center rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wide px-4 py-1.5">
+    <div className="space-y-4 md:space-y-6">
+      <span className="inline-flex items-center rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-bold tracking-wide px-3 py-1 md:px-4 md:py-1.5">
         NDIS Registered &amp; Private Physiotherapy
       </span>
 
-      <h1 className="text-4xl sm:text-5xl font-bold text-secondary leading-tight">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary leading-tight">
         Expert Physiotherapy
         <br />
         For <span className="text-primary italic">Every Body</span>
       </h1>
-      <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
+      <p className="text-sm md:text-lg text-gray-600 leading-relaxed max-w-xl">
         MoveAbility Health delivers personalised physiotherapy, rehabilitation,
         and NDIS care in Tarneit. Tailored to help you move with freedom,
         recover safely, and live better every day.

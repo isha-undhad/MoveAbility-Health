@@ -10,11 +10,11 @@ const bottomLinks: FooterLink[] = [
 
 export default function Footer() {
   return (
-    <footer className="pt-12 md:pt-16 pb-8 bg-secondary text-white">
+    <footer className="pt-10 md:pt-16 pb-8 bg-secondary text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid sm:grid-cols-3 gap-8 md:gap-10">
           {/* Logo + tagline */}
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             <div className="flex items-center gap-3">
               <span className="inline-flex items-center justify-center rounded-full bg-white p-1.5 shrink-0">
                 <Image
@@ -22,36 +22,36 @@ export default function Footer() {
                   alt="MoveAbility Health logo"
                   width={1400}
                   height={1009}
-                  className="h-11 w-11 md:h-12 md:w-12 object-contain"
+                  className="h-9 w-9 md:h-12 md:w-12 object-contain"
                 />
               </span>
               <span className="flex flex-col justify-center">
                 <span className="flex flex-col items-center">
-                  <span className="text-xl md:text-2xl font-bold leading-none whitespace-nowrap">
+                  <span className="text-lg md:text-2xl font-bold leading-none whitespace-nowrap">
                     <span className="text-white">Move</span>
                     <span className="text-primary">Ability</span>
                   </span>
-                  <span className="mt-1 text-[10px] sm:text-xs font-semibold leading-none tracking-wide text-white/80 whitespace-nowrap">
+                  <span className="mt-1 text-[9px] sm:text-xs font-semibold leading-none tracking-wide text-white/80 whitespace-nowrap">
                     — HEALTH —
                   </span>
                 </span>
-                <span className="mt-1 text-[10px] leading-tight font-semibold tracking-widest text-white/60">
+                <span className="mt-1 text-[9px] md:text-[10px] leading-tight font-semibold tracking-widest text-white/60">
                   MOVE • RECOVER • LIVE BETTER
                 </span>
               </span>
             </div>
-            <p className="text-sm text-white/70 leading-relaxed">
+            <p className="text-xs md:text-sm text-white/70 leading-relaxed">
               Tarneit&rsquo;s premier physiotherapy, rehabilitation, and NDIS
               capacity-building clinic. Evidence-based care delivered by
               accredited clinicians who value your lasting well-being.
             </p>
-            <p className="text-sm text-primary font-medium">
+            <p className="text-xs md:text-sm text-primary font-medium">
               NDIS Provider Registered • AHPRA Certified
             </p>
           </div>
 
           <FooterColumn title="Contact Us">
-            <ul className="space-y-2 text-sm text-white/70 leading-relaxed">
+            <ul className="space-y-2 text-xs md:text-sm text-white/70 leading-relaxed">
               <li>
                 Phone:{" "}
                 <a href="tel:0476582414" className="hover:text-primary transition-colors">
@@ -69,7 +69,7 @@ export default function Footer() {
           </FooterColumn>
 
           <FooterColumn title="Business Hours">
-            <ul className="space-y-2 text-sm text-white/70 leading-relaxed">
+            <ul className="space-y-2 text-xs md:text-sm text-white/70 leading-relaxed">
               <li className="flex justify-between gap-4">
                 <span>Monday &ndash; Friday</span>
                 <span>8:00am &ndash; 6:00pm</span>

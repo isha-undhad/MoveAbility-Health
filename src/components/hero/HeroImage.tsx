@@ -10,7 +10,7 @@ export interface HeroImageProps {
 
 export default function HeroImage({ src, alt, caption, badge }: HeroImageProps) {
   return (
-    <div className="relative lg:ml-6 xl:ml-10 pb-10 pr-4">
+    <div className="relative lg:ml-6 xl:ml-10 pb-8 md:pb-10 pr-4">
       <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-lg">
         <Image
           src={src}
@@ -22,13 +22,13 @@ export default function HeroImage({ src, alt, caption, badge }: HeroImageProps) 
         />
 
         {/* dark badge overlay */}
-        <span className="absolute top-4 right-4 rounded-full bg-secondary/90 text-white text-[11px] font-semibold tracking-wide px-3.5 py-1.5 shadow-md">
+        <span className="absolute top-3 right-3 md:top-4 md:right-4 rounded-full bg-secondary/90 text-white text-[10px] md:text-[11px] font-semibold tracking-wide px-2.5 py-1 md:px-3.5 md:py-1.5 shadow-md">
           {badge}
         </span>
 
         {/* script caption, partially bleeding off the edge */}
         <p
-          className="absolute bottom-6 right-0 translate-x-1/4 text-2xl sm:text-3xl text-white/90 rotate-[-4deg] whitespace-nowrap"
+          className="absolute bottom-4 md:bottom-6 right-0 translate-x-1/4 text-xl sm:text-2xl md:text-3xl text-white/90 rotate-[-4deg] whitespace-nowrap"
           style={{ fontFamily: "'Brush Script MT', cursive" }}
         >
           {caption}

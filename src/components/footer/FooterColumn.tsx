@@ -7,8 +7,8 @@ export interface FooterColumnProps {
 
 export default function FooterColumn({ title, children }: FooterColumnProps) {
   return (
-    <div className="space-y-4">
-      <h3 className="font-semibold text-white">{title}</h3>
+    <div className="space-y-3 md:space-y-4">
+      <h3 className="font-semibold text-white text-sm md:text-base">{title}</h3>
       {children}
     </div>
   );

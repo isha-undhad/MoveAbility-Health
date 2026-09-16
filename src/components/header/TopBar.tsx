@@ -1,9 +1,9 @@
 export default function TopBar() {
   return (
     <div className="bg-secondary text-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-2 flex items-center justify-between gap-4 text-xs">
-        <span className="flex items-center gap-2 shrink-0">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-1.5 md:py-2 flex items-center justify-between gap-4 text-[10px] sm:text-xs">
+        <span className="flex items-center gap-1.5 md:gap-2 shrink-0">
+          <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
           <span className="text-white/90">
             Clinic Open Today <span className="text-primary">•</span> 8:00 AM – 6:00 PM
           </span>

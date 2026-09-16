@@ -10,7 +10,7 @@ export interface FooterBottomProps {
 
 export default function FooterBottom({ copyrightText, links }: FooterBottomProps) {
   return (
-    <div className="mt-8 pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+    <div className="mt-6 md:mt-8 pt-5 md:pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4 text-xs md:text-sm text-white/60">
       <p>{copyrightText}</p>
       <div className="flex items-center gap-3">
         {links.map((link, index) => (

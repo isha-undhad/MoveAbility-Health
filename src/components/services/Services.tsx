@@ -49,14 +49,14 @@ export default function Services() {
   return (
     <section id="services" className="scroll-mt-20 pt-10 md:pt-14 lg:pt-16 pb-5 md:pb-8 lg:pb-12 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-secondary">Our Services</h2>
-          <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary">Our Services</h2>
+          <p className="mt-3 md:mt-4 text-sm md:text-lg text-gray-600 leading-relaxed">
             Comprehensive physiotherapy services to support your health and wellbeing.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8 items-stretch">
           {services.map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}

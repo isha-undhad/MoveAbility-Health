@@ -32,15 +32,15 @@ export default function WhyChooseUsSection() {
   return (
     <section id="why-choose-us" className="scroll-mt-20 pt-10 md:pt-16 lg:pt-24 pb-5 md:pb-8 lg:pb-12 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          <div className="space-y-6 lg:sticky lg:top-28">
-            <p className="text-sm font-bold tracking-widest text-primary uppercase">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-start">
+          <div className="space-y-4 md:space-y-6 lg:sticky lg:top-28">
+            <p className="text-xs md:text-sm font-bold tracking-widest text-primary uppercase">
               02 / The Clinical Difference
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary leading-tight">
               Why Choose MoveAbility?
             </h2>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 leading-relaxed">
               We don&rsquo;t rely on generic exercise printouts or rushed consultations.
               Our experienced physiotherapists combine advanced clinical diagnosis with
               empathetic, 1-on-1 human connection.
@@ -54,7 +54,7 @@ export default function WhyChooseUsSection() {
             />
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid sm:grid-cols-2 gap-3 md:gap-6 items-stretch">
             {differences.map((item) => (
               <ClinicalDifferenceCard key={item.title} {...item} />
             ))}

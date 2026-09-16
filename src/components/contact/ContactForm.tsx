@@ -131,9 +131,9 @@ export default function ContactForm({ heading }: ContactFormProps) {
   };
 
   return (
-    <div className="rounded-xl bg-white border border-gray-100 shadow-md p-6 md:p-8 space-y-6">
+    <div className="rounded-xl bg-white border border-gray-100 shadow-md p-4 md:p-8 space-y-4 md:space-y-6">
       <div className="space-y-2">
-        <h2 className="text-2xl sm:text-3xl font-bold text-secondary">{heading}</h2>
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-secondary">{heading}</h2>
       </div>
 
       {isSuccess && (
