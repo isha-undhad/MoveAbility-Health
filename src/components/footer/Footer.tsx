@@ -60,8 +60,8 @@ export default function Footer() {
               </li>
               <li>
                 Email:{" "}
-                <a href="mailto:info@moveabilityhealth.com.au" className="hover:text-primary transition-colors">
-                  info@moveabilityhealth.com.au
+                <a href="mailto:moveabilityhealth@gmail.com" className="hover:text-primary transition-colors">
+                  moveabilityhealth@gmail.com
                 </a>
               </li>
               <li>Clinic: Tarneit, Victoria 3029, Australia</li>
