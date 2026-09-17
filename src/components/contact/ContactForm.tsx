@@ -25,7 +25,9 @@ const INITIAL_VALUES: FormValues = {
 
 const NAME_PATTERN = /^[A-Za-z\s]+$/;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_PATTERN = /^[0-9+\-\s]{8,15}$/;
+const PHONE_ALLOWED_CHARS = /^[0-9+\-\s]*$/;
+const PHONE_MIN_DIGITS = 8;
+const PHONE_MAX_DIGITS = 15;
 
 function validateField(field: keyof FormValues, value: string): string | undefined {
   switch (field) {
@@ -45,7 +47,9 @@ function validateField(field: keyof FormValues, value: string): string | undefin
     case "phone": {
       const trimmed = value.trim();
       if (!trimmed) return "Please enter your phone number";
-      if (!PHONE_PATTERN.test(trimmed)) return "Please enter a valid phone number";
+      if (!PHONE_ALLOWED_CHARS.test(trimmed)) return "Enter a valid phone number";
+      const digitCount = trimmed.replace(/\D/g, "").length;
+      if (digitCount < PHONE_MIN_DIGITS || digitCount > PHONE_MAX_DIGITS) return "Enter a valid phone number";
       return undefined;
     }
     case "message": {
@@ -67,6 +71,11 @@ export default function ContactForm({ heading }: ContactFormProps) {
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setValues((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const sanitized = e.target.value.replace(/[^0-9+\-\s]/g, "");
+    setValues((prev) => ({ ...prev, phone: sanitized }));
   };
 
   const handleBlur = (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -249,8 +258,9 @@ export default function ContactForm({ heading }: ContactFormProps) {
               type="tel"
               autoComplete="tel"
               placeholder="0400 000 000"
+              maxLength={15}
               value={values.phone}
-              onChange={handleChange}
+              onChange={handlePhoneChange}
               onBlur={handleBlur}
               aria-invalid={Boolean(errors.phone)}
               className={`w-full rounded-lg border px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus-visible:ring-2 focus:border-primary transition-colors ${

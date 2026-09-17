@@ -96,7 +96,7 @@ export async function POST(request: Request) {
   const safeMessage = message.trim();
 
   // --- SMTP configuration (server-side only; never sent to the client) ---
-  const { SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USERNAME, SMTP_PASSWORD, NOTIFICATION_EMAIL } = process.env;
+  const { SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USERNAME, SMTP_PASSWORD } = process.env;
 
   if (!SMTP_HOST || !SMTP_PORT || !SMTP_USERNAME || !SMTP_PASSWORD) {
     // Do not leak which variables are missing or any credential values.
@@ -127,7 +127,7 @@ export async function POST(request: Request) {
 
     await transporter.sendMail({
       from: SMTP_USERNAME,
-      to: NOTIFICATION_EMAIL || SMTP_USERNAME,
+      to: "moveabilityhealth@gmail.com",
       replyTo: safeEmail,
       subject: "New Contact Form Submission - MoveAbility Health",
       text,

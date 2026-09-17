@@ -51,7 +51,7 @@ export function buildEnquiryNotificationEmail(data: EnquiryNotificationData): {
                   MoveAbility Health
                 </p>
                 <p style="margin:0; font-size:24px; font-weight:bold; color:#ffffff;">
-                  New enquiry received
+                  Enquiry received
                 </p>
               </td>
             </tr>
@@ -102,8 +102,7 @@ export function buildEnquiryNotificationEmail(data: EnquiryNotificationData): {
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                   <tr>
                     <td style="border-top:1px solid #e3e8e6; padding-top:24px; text-align:center;">
-                      <p style="margin:0 0 4px 0; font-size:14px; font-weight:bold; color:#1f4d43;">MoveAbility Health</p>
-                      <p style="margin:0; font-size:12px; color:#9ca3af;">Thank you for contacting us.</p>
+                      <p style="margin:0; font-size:14px; font-weight:bold; color:#1f4d43;">MoveAbility Health</p>
                     </td>
                   </tr>
                 </table>
