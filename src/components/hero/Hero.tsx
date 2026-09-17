@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="scroll-mt-20 pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-16 lg:pb-20"
+      className="scroll-mt-20 pt-4 md:pt-6 lg:pt-8 pb-8 md:pb-16 lg:pb-20"
     >
       <div id="about" className="scroll-mt-24 max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
         <HeroContent />
