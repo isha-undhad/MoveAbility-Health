@@ -32,9 +32,6 @@ export default function Gallery() {
     <section id="gallery" className="scroll-mt-20 pt-5 md:pt-8 lg:pt-12 pb-5 md:pb-8 lg:pb-12 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="space-y-2 md:space-y-3 mb-8 md:mb-14">
-          <p className="text-xs md:text-sm font-bold tracking-widest text-primary uppercase">
-            04 / Our Environment
-          </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary">Clinic &amp; Treatment Gallery</h2>
         </div>
 

@@ -20,7 +20,6 @@ export default function MapEmbed({
   return (
     <div className="h-full flex flex-col space-y-4 md:space-y-6">
       <div className="space-y-2 md:space-y-3">
-        <p className="text-xs md:text-sm font-bold tracking-widest text-primary uppercase">05 / Tarneit Clinic</p>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary">Visit Us</h2>
         <p className="text-sm md:text-base text-gray-600 leading-relaxed">
           Conveniently positioned in Tarneit with quick access from Truganina,
