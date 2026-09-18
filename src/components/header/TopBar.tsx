@@ -19,13 +19,13 @@ export default function TopBar() {
 
         <span className="flex items-center gap-4 shrink-0">
           <a
-            href="tel:0476582414"
+            href="tel:0478582414"
             className="hidden sm:flex items-center gap-1.5 text-white/90 hover:text-primary transition-colors"
           >
             <svg aria-hidden="true" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-1.932.966a11.042 11.042 0 005.516 5.516l.966-1.932a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            0476 582 414
+            0478 582 414
           </a>
           <a
             href="mailto:moveabilityhealth@gmail.com"

@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "MoveAbility Health",
   description: "MoveAbility Health - Mobile & Clinic Physiotherapy, Exercise Physiology, and Allied Health Services.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
